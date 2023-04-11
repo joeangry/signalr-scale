@@ -2,10 +2,13 @@ using Web.Websocket;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+var redisConnection = builder.Configuration.GetValue<string>("App:RedisConnection");
 
+Console.WriteLine($"Using '{redisConnection}' for redis connection");
+// Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddSignalR();
+builder.Services.AddSignalR()
+    .AddStackExchangeRedis(redisConnection);
 
 var app = builder.Build();
 
