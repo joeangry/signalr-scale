@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chat-app-redis
+spec:
+  selector:
+    matchLabels:
+      app: chat-app-redis
+  template:
+    metadata:
+      labels:
+        app: chat-app-redis
+    spec:
+      containers:
+      - name: chat-app-redis
+        image: redis:6.2.11
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 6379
