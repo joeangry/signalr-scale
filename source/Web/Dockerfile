@@ -12,16 +12,16 @@ RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /src
-COPY ["web/web.csproj", "web/"]
-RUN dotnet restore "web/web.csproj"
+COPY ["Web/Web.csproj", "Web/"]
+RUN dotnet restore "Web/Web.csproj"
 COPY . .
-WORKDIR "/src/web"
-RUN dotnet build "web.csproj" -c Release -o /app/build
+WORKDIR "/src/Web"
+RUN dotnet build "Web.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "web.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Web.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "web.dll"]
+ENTRYPOINT ["dotnet", "Web.dll"]
