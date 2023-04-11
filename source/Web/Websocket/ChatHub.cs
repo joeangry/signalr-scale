@@ -15,6 +15,8 @@ public class ChatHub : Hub
     {
         _logger.LogInformation("{HubName} received a message '{Message}' from {Name}", nameof(ChatHub), message, name);
 
-        await Clients.All.SendAsync("ReceiveMessage", name, message);
+        var host = Environment.MachineName;
+        
+        await Clients.All.SendAsync("ReceiveMessage", host, name, message);
     }
 }
