@@ -11,9 +11,12 @@ spec:
       labels:
         app: chat-app
     spec:
+      imagePullSecrets:
+        - name: regcred
       containers:
       - name: chat-app
-        image: <Image>
+        image: ghcr.io/joeangry/signalr-scale:0.0.1
+        
         resources:
           limits:
             memory: "128Mi"
