@@ -19,11 +19,11 @@ spec:
         image: ghcr.io/joeangry/signalr-scale:0.0.2
         
         env:
-          - name: APP__REDISCONNECTION
+          - name: App__RedisConnection
             valueFrom:
               configMapKeyRef:
                 key: chatapp-config
-                name: APP_REDISCONNECTION
+                name: redis-host
 
         resources:
           limits:

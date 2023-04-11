@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: chatapp-config
 data:
-  APP_REDISCONNECTION: chat-app-redis
+  redis-host: chat-app-redis
