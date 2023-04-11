@@ -22,8 +22,8 @@ spec:
           - name: App__RedisConnection
             valueFrom:
               configMapKeyRef:
-                key: chatapp-config
-                name: redis-host
+                key: redis-host
+                name: chatapp-config
 
         resources:
           limits:
