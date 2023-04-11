@@ -16,7 +16,7 @@ spec:
         - name: regcred
       containers:
       - name: chat-app
-        image: ghcr.io/joeangry/signalr-scale:0.0.1
+        image: ghcr.io/joeangry/signalr-scale:0.0.2
         
         resources:
           limits:
