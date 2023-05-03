@@ -26,6 +26,9 @@ spec:
                 key: redis-host
                 name: chatapp-config
 
+          - name: ASPNETCORE_URLS
+            value: http://localhost:5000
+
         resources:
           limits:
             memory: "128Mi"
