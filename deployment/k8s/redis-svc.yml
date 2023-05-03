@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: chat-app
+  name: chat-app-redis
 spec:
   selector:
-    app: chat-app
+    app: chat-app-redis
   ports:
   - port: 6379
     targetPort: 6379
