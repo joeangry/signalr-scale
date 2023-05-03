@@ -3,7 +3,8 @@ kind: Route
 metadata:
   labels:
     app: chat-app
-  name: chat-app
+  # Part of the route
+  name: chatservice
   namespace: chat-app
 spec:
   host: ""
@@ -11,5 +12,6 @@ spec:
     targetPort: 9001
   to:
     kind: Service
+    # Target
     name: chat-app
     weight: 100
