@@ -4,4 +4,4 @@ metadata:
   name: chatapp-config
   namespace: chat-app
 data:
-  redis-host: chat-app-redis
+  redis-host: chat-app-redis:6379
