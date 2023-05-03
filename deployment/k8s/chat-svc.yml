@@ -8,4 +8,4 @@ spec:
     app: chat-app
   ports:
   - port: 9001
-    targetPort: 80
+    targetPort: 5000
