@@ -2,9 +2,9 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   labels:
-    app: bgd
+    app: chatapp
   # Part of the route
-  name: bgd
+  name: chatapp
   # Second part of the route
   namespace: bgd
 spec:
@@ -14,6 +14,6 @@ spec:
   to:
     kind: Service
     # Target
-    name: bgd
+    name: chatapp
     weight: 100
 status: {}

@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bgd
+  name: chatapp
   namespace: bgd
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: bgd
+      app: chatapp
   template:
     metadata:
       labels:
-        app: bgd
+        app: chatapp
     spec:
       imagePullSecrets:
         - name: regcred
       containers:
-      - name: bgd
+      - name: chatapp
         image: ghcr.io/joeangry/signalr-scale:0.0.2
         
         env:
@@ -24,7 +24,7 @@ spec:
             valueFrom:
               configMapKeyRef:
                 key: redis-host
-                name: bgd-config
+                name: chatapp-config
 
           - name: ASPNETCORE_URLS
             value: http://localhost:8080

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: bgd-config
+  name: chatapp-config
   namespace: bgd
 data:
   redis-host: chat-app-redis:6379
