@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: chat-app-redis
-        image: <Image>
+        image: redis:6.2.6
         resources:
           limits:
             memory: "128Mi"
