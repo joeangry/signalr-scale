@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: chat-app
-  namespace: chat-app
+  name: bgd
+  namespace: bgd
 spec:
   selector:
-    app: chat-app
+    app: bgd
   ports:
-  - port: 9001
-    targetPort: 9001
+  - port: 8080
+    targetPort: 8080
     protocol: TCP

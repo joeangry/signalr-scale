@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: chat-app
-  namespace: chat-app
+  name: bgd
+  namespace: bgd
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: chat-app
+      app: bgd
   template:
     metadata:
       labels:
-        app: chat-app
+        app: bgd
     spec:
       imagePullSecrets:
         - name: regcred
       containers:
-      - name: chat-app
+      - name: bgd
         image: ghcr.io/joeangry/signalr-scale:0.0.2
         
         env:
@@ -27,7 +27,7 @@ spec:
                 name: chatapp-config
 
           - name: ASPNETCORE_URLS
-            value: http://localhost:9001
+            value: http://localhost:8080
 
         resources:
           limits:
