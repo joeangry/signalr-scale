@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: chatapp
   namespace: bgd
+  labels:
+    app: chatapp
 spec:
   selector:
     app: chatapp

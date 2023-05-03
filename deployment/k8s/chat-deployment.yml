@@ -8,6 +8,7 @@ spec:
   selector:
     matchLabels:
       app: chatapp
+  strategy: {}
   template:
     metadata:
       labels:
@@ -33,5 +34,3 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "500m"
-        ports:
-        - containerPort: 80
