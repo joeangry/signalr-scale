@@ -9,6 +9,11 @@ spec:
   containers:
   - name: debug-pod
     image: alpine:3.17.3
+    command:
+      - /bin/sh
+      - "-c"
+      - "sleep 60m"
+    imagePullPolicy: IfNotPresent
     resources:
       limits:
         memory: "128Mi"
