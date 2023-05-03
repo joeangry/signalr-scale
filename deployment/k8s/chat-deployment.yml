@@ -4,7 +4,7 @@ metadata:
   name: chat-app
   namespace: chat-app
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: chat-app
