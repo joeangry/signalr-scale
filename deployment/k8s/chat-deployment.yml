@@ -24,7 +24,7 @@ spec:
             valueFrom:
               configMapKeyRef:
                 key: redis-host
-                name: chatapp-config
+                name: bgd-config
 
           - name: ASPNETCORE_URLS
             value: http://localhost:8080
