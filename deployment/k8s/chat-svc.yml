@@ -9,3 +9,4 @@ spec:
   ports:
   - port: 9001
     targetPort: 5000
+    protocol: TCP
